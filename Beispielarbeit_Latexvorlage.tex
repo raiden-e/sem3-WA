@@ -1,0 +1,270 @@
+%Praeambel, welche den Dokumentenklasse bestimmt, zu ladende Latex-Pakete angibt etc.
+%erstmal wählt man den Stil des Dokuments (Schriftgröße, Papierformat etc.)
+\documentclass[a4paper,12pt,numbers=noenddot]{scrartcl}
+\setlength{\parindent}{1em}
+\linespread{1.5} % 1.5-facher Zeilenabstand
+% dann lädt man die Pakete, die man benötigt
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem} % Paket, um einfacher Aufzählungen etc. zu anzupassen
+%\usepackage{chapterbib} % added
+\usepackage{geometry} % added
+\usepackage{natbib}
+
+\usepackage{textpos,xcolor,rawfonts,latexsym,graphicx,epsf,verbatim}
+\geometry{a4paper, left=35mm, right=25mm, top=20mm, bottom=20mm} % Seiteneinrichtung
+\definecolor{fh_orange}{rgb}{0.953,0.201,0}
+\definecolor{fh_grau}{rgb}{0.76,0.75,0.76}
+% hier beginnt das eigentliche Dokument
+\begin{document}
+% Globales Setzen der Optionen:
+
+\begin{titlepage}
+	% ACHTUNG:.Verwendung des FH-Logos ist nicht gestattet
+	\begin{textblock}{6.5}(-1.5,-3)
+		\begin{color}{fh_grau}
+			\rule{6.8cm}{33cm}
+		\end{color}
+	\end{textblock}
+	\begin{textblock}{6.5}(-1.3,1)
+		{\large \textsf{Miniarbeit}}
+	\end{textblock}
+
+	\begin{textblock}{7}(4.1,1)
+		{\noindent \huge
+			\textsf{\textbf{Nicht fotorealistische Echtzeit-Animationen für immersives Storytelling\\[0.3cm]
+					%\Large  Zweizeiliger Untertitel\\[0.05cm]
+					%sofern vorhanden}}
+			} }}
+	\end{textblock}
+
+
+	\begin{textblock}{6}(4.1,6.5)\noindent
+		\textsf{von \\
+	Raiden Erdmann \\
+	geb.\ am 05.03.1999  \\[0.7cm]
+	Betreuung durch: Prof.\ Dr.\ Sonja Kuhnt \\[0.5cm]
+	Dortmund, \today}
+	\end{textblock}
+
+	\begin{textblock}{6.5}(-0.9,10.8)
+		\noindent
+			\textsf{An der Fachhochschule Dortmund\\
+			im Fachbereich Informatik\\
+			Studiengang Wirtschaftsinformatik\\
+	%		Vertiefung xxxx\\
+	%		erstellte Thesis
+	erstelle Beispielarbeit	für das \\
+Modul Wissenschaftliches Arbeiten
+	%		zur Erlangung \\des akademischen Grades\\
+	%		Bachelor of Science\\ B. Sc.
+}
+	\end{textblock}
+
+\end{titlepage}
+
+
+% ANDERE VARIANTE TITELBLATT:
+
+%\begin{titlepage}
+	% ACHTUNG:.Verwendung des FH-Logos ist nicht gestattet
+%	\begin{textblock}{6.5}(-1.5,-3)
+%		\begin{color}{fh_grau}
+%			\rule{5.3cm}{33cm}
+%		\end{color}
+%	\end{textblock}
+%	\begin{textblock}{6.5}(-1.3,1)
+%		{\large \textsf{Bachelorarbeit}}
+%	\end{textblock}
+%
+%	\begin{textblock}{9}(3.1,1)
+%		{\noindent \huge
+%			\textsf{\textbf{Titel der Arbeit\\[0.3cm]
+%					%\Large  Zweizeiliger Untertitel\\[0.05cm]
+%					%sofern vorhanden}}
+%		} }}
+%	\end{textblock}
+%
+%
+%	\begin{textblock}{6.5}(-0.9,12.5)\noindent
+%		\textsf{Betreuung durch:\\ Prof.\ Dr.\ Sonja Kuhnt \\
+%			xx\\[0.2cm]
+%			Dortmund, \today}
+%	\end{textblock}
+%
+%	\begin{textblock}{6}(3.1,6.5)\noindent
+%		\textsf{von \\
+%		xxxx\\
+%			geb.\ am xx.xx.xxxx \\[0.7cm]}
+%	\end{textblock}
+%
+%	\begin{textblock}{8}(3.1,9.7)
+%		\noindent
+%		\textsf{An der Fachhochschule Dortmund
+%			im Fachbereich Informatik\\
+%			Studiengang Medizinische Informatik\\
+%			erstellte Thesis	zur Erlangung \\des akademischen Grades\\
+%			Bachelor of Science\\ B. Sc.}
+%	\end{textblock}
+%
+%\end{titlepage}
+
+ \tableofcontents
+ \newpage
+\section{Kapitel}
+Ein Kapitel wird mit dem Befehl \verb|\section| erzeugt
+\subsection{Unterkapitel}
+Ein Unterkapitel wird mit dem Befehl \verb|\subsection| erzeugt
+\subsection{Wenn Unterkapitel dann 2 oder mehr}
+\subsubsection{Weitere Ebene}
+Eine weitere Ebene kann mit dem Befehl \verb|\subsubsection| erzeugt werden
+\subsubsection{Wenns denn sein muss}
+
+\section{Aufzählung}
+Eine Aufzählung kann mit dem Befehl \verb|\begin{itemize} \end{itemize}|
+erzeugt werden. Die einzelnen Aufzählungspunkte werden mit dem Befehl \verb|\item|
+ergänzt.
+
+\begin{itemize}
+	\item Herkunft des Datensatzes, Anzahl Beobachtungen
+	\item[]  Beschreibung der Variablen
+	\item[a] Deskriptive Analyse der Daten
+\end{itemize}
+
+\section{Abbildung}
+Eine Grafik kann wie folgt eingefügt werden:
+\begin{verbatim}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\linewidth]{Vorlage_Bericht_Histogramm}
+\caption{Sinnvolle Beschriftung der Abbildung.} \label{Referenzlabel}
+\end{figure}
+\end{verbatim}
+Eine Beschriftung wird mit \verb|\caption{Beschriftung}| ergänzt. Der \verb|\label| Befehl ermöglicht die spätere Referenzierung der Abbildung mit \verb|\ref{label}|, wie beispielsweise auf Abbildung \ref{Referenzlabel}. Dies ist näher beschrieben in Kapitel \ref{Kapitel:Referenz}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Histogramm.pdf}
+	\caption{Sinnvolle Beschriftung der Abbildung.} \label{Referenzlabel}
+\end{figure}
+\section{Tabellen}
+Tabellen können mit den Befehlen \verb|\begin{table} \end{table}| und \linebreak\verb|\begin{tabular}{Optionen} \end{tabular}| erzeugt werden. Dem \linebreak\verb|\begin{tabular}{Optionen}|-Befehl müssen als Optionen die Anzahl und Ausrichtung der Spalten übergeben werden. Die Anzahl der Spalten wird über die Anzahl der übergebenen Argumente festgelegt. Spalten können linksbündig \verb|l|, rechtsbündig \verb|r| oder zentriert \verb|c| ausgerichtet sein. \verb|\begin{tabular}{lll} \end{tabular}| erzeugt eine Tabelle mit 3 links ausgerichteten Spalten, \linebreak\verb|\begin{tabular}{rrlcc} \end{tabular}| erzeugt eine Tabelle mit 5 Spalten. Die ersten beiden sind rechts ausgerichtet, die mittlere links und die letzten beiden zentriert. Wird ein | zwischen den Optionen ergänzt, so werden die Spalten durch eine Linie voneinander getrennt (siehe Tabelle \ref{tab:WerteVonABUndC}). Nach diesem Befehl wird der Inhalt der Tabelle ergänzt. Jedes \verb|&|-Zeichen in der Tabelle grenzt zwei Spalten voneinander ab, \verb|\\| beginnt eine neue Tabellenzeile. \verb|\hline| zeichnet eine horizontale Linie zur Trennung von Tabellenzeilen.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lc|r}
+		\hline
+		A & B & C \\
+		\hline
+		1.1 & 2.2 & 3.3 \\
+		3.2 & 2.1 & 1.2 \\
+		\hline
+	\end{tabular}
+	\caption{Werte von A, B und C}
+	\label{tab:WerteVonABUndC}
+\end{table}
+
+\section{Formeln}
+Formeln werden mit dem Befehl  \verb|\begin{equation} \end{equation}| eingeführt. Formel \ref{eq:arithm_Mittel} stellt die Beschreibung des Mittelwertes dar.
+\begin{equation}\label{eq:arithm_Mittel}
+\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i.
+\end{equation}
+
+Formel \ref{eq:Stichprobenvarianz} stellt die Formel für die Stichprobenvarianz dar.
+\begin{equation}\label{eq:Stichprobenvarianz}
+s^2=\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2
+\end{equation}
+Die empirische Kovarianz ist in Formel \ref{eq:empKovarianz} beschrieben.
+\begin{equation}\label{eq:empKovarianz}
+\tilde s_{xy}=\frac{1}{n}\sum_{i=1}^{n} (x_i-\bar x)(y_i-\bar y)
+\end{equation}
+
+Der Korrelationskoeffizient nach Bravais-Pearson ist in Formel \ref{eq:Korrelationskoeffizient} zu finden.
+\begin{equation}\label{eq:Korrelationskoeffizient}
+r_{xy}=\frac{\tilde s_{xy}}{\tilde s_x \tilde s_y}=\frac{\sum_{i=1}^{n} (x_i-\bar x)(y_i-\bar y)}{\sqrt{\sum_{i=1}^{n} (x_i-\bar x)^2\sum_{i=1}^{n} (y_i-\bar y)^2}} = \frac{\sum_{i=1}^n x_iy_i - n\bar{x}\bar{y}}{\sqrt{\left(\sum_{i=1}^n x_i^2 - n\bar{x}^2\right)\left(\sum_{i=1}^n y_i^2 - n\bar{y}^2\right)}}
+\end{equation}
+Das einfache, lineare Regressionsmodell beschreibt ein Modell mit der in Formel \ref{eq:linearesModell}.
+\begin{equation}\label{eq:linearesModell}
+Y_i = \beta_0+ \beta_1 x_i + \varepsilon_i \quad i=1, \dots, n
+\end{equation}
+Die Schätzer für das Modell können mit den Formeln \ref{eq:beta1} und \ref{eq:beta1} berechnet werden.
+\begin{equation}\label{eq:beta1}
+\hat \beta_1 =\frac{\sum_{i=1}^n (x_i-\bar x)(y_i-\bar y)}{\sum_{i=1}^n (x_i-\bar x)^2}=\frac{\sum_{i=1}^n x_iy_i - n \overline{x} ~ \overline{y}}{\sum_{i=1}^n x_i^2-n\overline{x}^2}
+\end{equation}
+\begin{equation}\label{eq:beta0}
+ \hat \beta_0 = \bar y-\hat \beta_1 \bar x
+\end{equation}
+Das multiple lineare Regressionsmodell hat die in Formel \ref{eq:Multiple_Lineare_Regression} dargestellte Form.
+\begin{equation}\label{eq:Multiple_Lineare_Regression}
+Y_i = \beta_0+\beta_1 x_{i1}+...+\beta_k x_{ik}+\varepsilon_i
+\end{equation}
+Das Bestimmtheitsmaß $R^2$ kann mit Hilfe von Formel \ref{eq:Bestimmtheitsmass} berechnet werden.
+\begin{equation}\label{eq:Bestimmtheitsmass}
+R^2=\frac{\sum_{i=1}^n(\hat y_i-\bar y)^2}{\sum_{i=1}^n (y_i-\bar y)^2}
+\end{equation}
+Formel \ref{eq:adjBestimmtheitsmass} gibt das adjustierte Bestimmtheitsmaß an.
+\begin{equation}\label{eq:adjBestimmtheitsmass}
+	R_{\makebox{adj}}^2= 1-\frac{n-1}{n-(k+1)}(1-R^2)
+\end{equation}
+\section{Referenzierung}\label{Kapitel:Referenz}
+Um eine Referenz auf ein Kapitel, Unterkapitel, eine Abbildung, Tabelle, Formel oder ähnliches zu erzeugen, muss der entsprechende Bereich mit dem Befehl \linebreak\verb|\label{Referenzlabel}| gekennzeichnet sein. Im weiteren Textverlauf kann dann mit Hilfe des Befehls \texttt{\textbackslash ref\{Referenzlabel\}} auf den entsprechenden Bereich referenziert werden. Um Unübersichtlichkeiten zu vermeiden, bietet es sich an, vor Tabellenlabels beispielsweise ein \verb|tab:| zu schreiben oder ein \verb|fig:| vor Abbildungslabel. So kann beispielsweise an dieser Stelle auf Formel \ref{eq:Stichprobenvarianz} oder Kapitel \ref{Kapitel:Referenz} verwiesen werden.
+\section{Literatur}
+Literatur kann referenziert werden, indem zunächst Einträge in der Bibliographie erstellt werden. Die Bibliographie ist in dieser Vorlage in der Datei \verb|bibliography.bib| zu finden. Die Bibliographie enthält beispielsweise Referenzen auf Bücher oder Journalartikel. Beim Anlegen eines Eintrags muss zunächst die Art des Eintrags z.B. für ein Buch mit \verb|@book| oder für einen Journalartikel mit \verb|@article| festgelegt werden. Danach folgt ein Referenzkürzel, mit Hilfe dessen eine Literaturangabe verlinkt werden kann. Dies erfolgt über den Befehl \verb|\cite{Kürzel}|. Danach werden in beliebiger Reihenfolge Informationen über die Artikel aufgelistet. Bücher benötigen in der Regel Informationen über den Autor, den Titel, den Verlag, das Veröffentlichungsjahr und den Ort der Veröffentlichung. Journalartikel benötigen den Autor, den Titel, das Journal, die Ausgabe, die Nummer, das Jahr und die Seiten der Veröffentlichung.\\
+Die eingepflegten Journals können dann wie bereits erwähnt, mit dem \verb|\cite|-Befehl referenziert werden. Beispielsweise kann an dieser Stelle auf \cite{Fahrmeier2010}, \cite{Fruth2014} und \cite{Tukey1977} verwiesen werden. Ein Literaturverzeichnis ist bereits in dieses Dokument integriert und wird somit automatisch erzeugt.
+\appendix
+\section{Anhang}
+\subsection{R-Code}
+Im Anhang des Dokumentes soll der verwendete R-Code angehängt werden. Dazu kann die verbatim-Umgebung verwendet werden. Innerhalb dieser Umgebung wird Quelltext genauso abgebildet, wie er in die Umgebung eingefügt wird. Es werden alle Leerzeichen und Zeilenumbrüche berücksichtigt. Eventuelle Latex-Befehle werden ignoriert. Im Folgenden finden Sie einige R-Beispiele.
+\begin{verbatim}
+> mean(daten$Gehalt)
+[1] 2501.971
+
+\end{verbatim}
+\begin{verbatim}
+> summary(data$Stickstoffdioxid)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's
+1.00    5.00   10.00   15.93   21.75   47.00       6
+\end{verbatim}
+
+\begin{verbatim}
+> model=lm(y~x,data=data)
+> summary(model)
+Call:
+lm(formula = y ~ x, data = data)
+
+Residuals:
+Min      1Q  Median      3Q     Max
+-34.625 -12.581  -0.629  10.447  53.578
+
+Coefficients:
+Estimate Std. Error t value Pr(>|t|)
+(Intercept)       67.3337     4.7930  14.048  < 2e-16 ***
+x				  -1.3003     0.2513  -5.174 5.41e-06 ***
+---
+Signif. codes:  0 ?***? 0.001 ?**? 0.01 ?*? 0.05 ?.? 0.1 ? ? 1
+
+Residual standard error: 17.86 on 44 degrees of freedom
+(6 observations deleted due to missingness)
+Multiple R-squared:  0.3783,	Adjusted R-squared:  0.3642
+F-statistic: 26.77 on 1 and 44 DF,  p-value: 5.41e-06
+\end{verbatim}
+
+\clearpage
+%\section*{Literaturverzeichnis}
+\addcontentsline{toc}{section}{Literatur}
+
+\bibliography{bibliography}
+
+\bibliographystyle{apalike-german}
+
+
+\clearpage
+\section*{Eigenständigkeitserklärung}
+Hiermit versichere ich, dass ich die vorliegende Arbeit selbst\"andig angefertigt und mich keiner fremden Hilfe bedient sowie keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Alle Stellen, die w\"ortlich oder sinngem\"aß ver\"offentlichten oder nicht ver\"offentlichten Schriften und anderen Quellen entnommen sind, habe ich als solche kenntlich gemacht. Diese Arbeit hat in gleicher oder \"ahnlicher Form noch keiner Pr\"ufungsbeh\"orde vorgelegen.
+\\\newline Dortmund, \today
+
+\end{document}
+\end{document}
